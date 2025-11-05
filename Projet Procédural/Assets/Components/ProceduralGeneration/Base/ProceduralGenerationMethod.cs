@@ -84,36 +84,6 @@ namespace Components.ProceduralGeneration
             }
         }
 
-        public void PlaceDebuger(RectInt room)
-        {
-            for (int ix = room.xMin; ix < room.xMax; ix++)
-            {
-                for (int iy = room.yMin; iy < room.yMax; iy++)
-                {
-                    if (!Grid.TryGetCellByCoordinates(ix, iy, out var cell))
-                    {
-                        continue;
-                    }
-                    AddTileToCell(cell, ROCK_TILE_NAME, true);
-                }
-            }
-        }
-
-        public void PlaceDebugerSand(RectInt room)
-        {
-            for (int ix = room.xMin; ix < room.xMax; ix++)
-            {
-                for (int iy = room.yMin; iy < room.yMax; iy++)
-                {
-                    if (!Grid.TryGetCellByCoordinates(ix, iy, out var cell))
-                    {
-                        continue;
-                    }
-                    AddTileToCell(cell, SAND_TILE_NAME, true);
-                }
-            }
-        }
-
         // -------------------------------------- CORRIDOR --------------------------------------------- 
 
         /// Creates an L-shaped corridor between two points, randomly choosing horizontal-first or vertical-first

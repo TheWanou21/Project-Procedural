@@ -18,7 +18,7 @@ namespace Components.ProceduralGeneration.BSP_Method
         [Header("Room Parameters")]
         [SerializeField] private int _maxCuts = 4;
         [SerializeField] private Vector2Int _roomMinSize = new(3, 3);
-        [SerializeField] private Vector2Int _roomMaxSize = new(12, 12);
+        [SerializeField] private Vector2Int _roomMaxSize = new(25, 25);
         protected override async UniTask ApplyGeneration(CancellationToken cancellationToken)
         {
             //Instantiations
@@ -39,14 +39,14 @@ namespace Components.ProceduralGeneration.BSP_Method
                 for (int i = 0; i < _maxSteps; i++)
                 {
 
-                    int width = node.nodeSpace.width;
-                    int lenght = node.nodeSpace.height;
-                    int x = node.nodeSpace.xMin;
-                    int y = node.nodeSpace.yMin;
+                    int width = RandomService.Range(_roomMinSize.x, _roomMaxSize.x);
+                    int length = RandomService.Range(_roomMinSize.y, _roomMaxSize.y);
+                    int x = RandomService.Range(node.nodeSpace.xMin, node.nodeSpace.xMax - width);
+                    int y = RandomService.Range(node.nodeSpace.yMin, node.nodeSpace.yMax - length);
 
-                    RectInt newRoom = new RectInt(x, y, width, lenght);
+                    RectInt newRoom = new RectInt(x, y, width, length);
 
-                    if (CanPlaceRoom(newRoom, 0))
+                    if (CanPlaceRoom(newRoom, 1))
                     {
                         await UniTask.Delay(GridGenerator.StepDelay, cancellationToken: cancellationToken);
                         PlaceRoom(newRoom);
