@@ -29,25 +29,24 @@ namespace Components.ProceduralGeneration.BSP_Method
             nodes.Add(world);
 
             //Création d'emplacements
-            for (int i = 0; i < _maxCuts; i++)
-            {
-                world.SplitXGen(_maxCuts, world, nodes);
-            }
+            world.SplitXGen(_maxCuts, world, nodes);
+            Debug.Log($"Nodes contient {nodes.Count} salles.");
 
             //Création des salles
             foreach (Node node in nodes)
             {
+                Debug.Log($"{node.nodeSpace}");
                 for (int i = 0; i < _maxSteps; i++)
                 {
 
                     int width = node.nodeSpace.width;
                     int lenght = node.nodeSpace.height;
-                    int x = RandomService.Range(0, node.nodeSpace.width - width);
-                    int y = RandomService.Range(0, node.nodeSpace.height - lenght);
+                    int x = node.nodeSpace.xMin;
+                    int y = node.nodeSpace.yMin;
 
                     RectInt newRoom = new RectInt(x, y, width, lenght);
 
-                    if (CanPlaceRoom(newRoom, 1))
+                    if (CanPlaceRoom(newRoom, 0))
                     {
                         await UniTask.Delay(GridGenerator.StepDelay, cancellationToken: cancellationToken);
                         PlaceRoom(newRoom);
@@ -85,12 +84,13 @@ namespace Components.ProceduralGeneration.BSP_Method
 
         public void Split()
         {
-            int allowedSpace = _randomService.Range(nodeSpace.width / 4, nodeSpace.width * 3 / 4);
+            
             //Une chance sur 2 de couper verticalement
             if (_randomService.Chance(0.5f))
             {
+                int allowedSpace = _randomService.Range(nodeSpace.width / 4, nodeSpace.width * 3 / 4);
                 RectInt firstChild = new RectInt(nodeSpace.xMin, nodeSpace.yMin, allowedSpace, nodeSpace.height); 
-                RectInt secondChild = new RectInt(nodeSpace.xMin + firstChild.xMax, nodeSpace.yMin, nodeSpace.width - allowedSpace, nodeSpace.height);
+                RectInt secondChild = new RectInt(firstChild.xMax, nodeSpace.yMin, nodeSpace.width - allowedSpace, nodeSpace.height);
                 Child1 = new Node(firstChild, _grid,_randomService);
                 Child2 = new Node(secondChild, _grid, _randomService);
                 
@@ -98,8 +98,9 @@ namespace Components.ProceduralGeneration.BSP_Method
             //Sinon coupure horizontale du parent
             else
             {
+                int allowedSpace = _randomService.Range(nodeSpace.height / 4, nodeSpace.height * 3 / 4);
                 RectInt firstChild = new RectInt(nodeSpace.xMin, nodeSpace.yMin, nodeSpace.width, allowedSpace);
-                RectInt secondChild = new RectInt(nodeSpace.xMin, nodeSpace.yMin + firstChild.yMax, nodeSpace.width, nodeSpace.height - allowedSpace);
+                RectInt secondChild = new RectInt(nodeSpace.xMin, firstChild.yMax, nodeSpace.width, nodeSpace.height - allowedSpace);
                 Child1 = new Node(firstChild, _grid, _randomService);
                 Child2 = new Node(secondChild, _grid, _randomService);
             }
