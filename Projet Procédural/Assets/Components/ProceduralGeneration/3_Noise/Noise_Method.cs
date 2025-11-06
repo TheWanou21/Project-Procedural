@@ -28,9 +28,9 @@ namespace Components.ProceduralGeneration.Noise_Method
         [SerializeField, Range(-5f, 5f)] float cellularJitterModifier = 1.0f;
 
         [Header("Material Height")]
-        [SerializeField, Range(0f, 1f)] float waterHeight = 0.3f;
-        [SerializeField, Range(0f, 1f)] float sandHeight = 0.35f;
-        [SerializeField, Range(0f, 1f)] float grassHeight = 0.5f;
+        [SerializeField, Range(-1f, 1f)] float waterHeight = 0.3f;
+        [SerializeField, Range(-1f, 1f)] float sandHeight = 0.35f;
+        [SerializeField, Range(-1f, 1f)] float grassHeight = 0.5f;
 
         protected override async UniTask ApplyGeneration(CancellationToken cancellationToken)
         {
@@ -57,12 +57,12 @@ namespace Components.ProceduralGeneration.Noise_Method
                 {
                     height = noise.GetNoise(x, y);
                     AssignTypeToCell(x,y, height);
-                    await UniTask.Delay(GridGenerator.StepDelay, cancellationToken: cancellationToken);
+                    
                 }
             }
 
 
-            
+            await UniTask.Delay(GridGenerator.StepDelay, cancellationToken: cancellationToken);
         }
 
         void AssignTypeToCell(int x, int y, float height)

@@ -13,4 +13,17 @@ MonoBehaviour:
   m_Name: Noise Methode
   m_EditorClassIdentifier: Assembly-CSharp::Components.ProceduralGeneration.Noise_Method.Noise_Method
   _maxSteps: 1000
-  mFrequency: 0
+  frequency: 0.02
+  noiseType: 0
+  fractalType: 3
+  octave: 4
+  lacunarity: 2
+  gain: 0.27
+  weightedStrength: 0
+  pingPongStrength: 2
+  CellularDistanceFunction: 1
+  cellularReturnType: 1
+  cellularJitterModifier: 1
+  waterHeight: -1
+  sandHeight: -0.113
+  grassHeight: 0.508
