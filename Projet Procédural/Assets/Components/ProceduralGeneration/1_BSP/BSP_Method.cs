@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace Components.ProceduralGeneration.BSP_Method
 {
-    [CreateAssetMenu(menuName = "Procedural Generation Method / BSP Method Placement")]
+    [CreateAssetMenu(menuName = "Procedural Generation Method /BSP Method Placement")]
 
     public class BSP_Method : ProceduralGenerationMethod
     {
