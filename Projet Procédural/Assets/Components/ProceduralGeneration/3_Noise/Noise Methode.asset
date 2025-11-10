@@ -24,6 +24,6 @@ MonoBehaviour:
   CellularDistanceFunction: 1
   cellularReturnType: 1
   cellularJitterModifier: 1
-  waterHeight: -1
-  sandHeight: -0.113
-  grassHeight: 0.508
+  waterHeight: -0.263
+  sandHeight: -0.038
+  grassHeight: 0.629
