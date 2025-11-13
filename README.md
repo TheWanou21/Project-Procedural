@@ -96,3 +96,25 @@ Point positifs de cette méthode :
 Point négatifs de cette méthode :
 * Il faut importer une bibliothèque pour ça
 * La méthode étant très précise, elle peut demander du temps pour être bien maîtrisée
+
+Ajouter une méthode
+---
+Pour ajouter une méthode, il faut que celle-ci dérive de la classe `ProceduralGenerationMethode` et, du coup, qu'il aient la méthode `ApplyGeneration`.
+La base nouvelle méthode se présente comme ça :
+```csharp
+//Entrez vos imports
+
+namespace. Components.ProceduralGeneration.nom_de_la_methode
+{
+  [CreateAssetMenu(menuName = "Procedural Generation Method/nom_de_la_methode" )]
+  public class nom_de_la_methode : ProceduralGenerationMethod
+  {
+    protected override async UniTask ApplyGeneration(CancellationToken cancellationToken)
+    {
+    await UniTask.Delay(GridGenerator.StepDelay, cancellationToken: cancellationToken);
+    cancellationToken.ThrowIfCancellationRequested();
+    }
+  }
+}
+```
+Vous n'avez plus qu'à l'utiliser !
