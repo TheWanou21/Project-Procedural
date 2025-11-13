@@ -74,24 +74,25 @@ Point négatifs de cette méthode :
 
 Cellular Automata
 ---
-Cette méthode permet de placer plusieurs salles au fur et à mesure en testant des placements aléatoires plusieurs fois jusqu'à ce qu'il trouve un emplacement de libre
+Cette méthode permet de faire des cartes plus générales en initialisant aléatoirement les tiles à un type et en changeant leur états selon les tyles voisines
 
 Point positifs de cette méthode :
-* La  méthode est relativement simple à coder
-* Les paramètres de placement restent très contrôlables
+* Write your text here :) ...
 
 Point négatifs de cette méthode :
-* Si les paramètres sont mal gérés, les espaces peuvent vite se recouper ou sortir de la carte
-* Cette méthode peut ne pas donner le nombre maximal ou idéal d'espaces souhaités
+* Cette méthode n'est pas particulièrement simple
+* Cette méthode est assez peu contrôlable
+* En fonction du rendement cette méthode peut être lente et avoir un rendu peu réaliste
 
 Noise
 ---
-Cette méthode permet de placer plusieurs salles au fur et à mesure en testant des placements aléatoires plusieurs fois jusqu'à ce qu'il trouve un emplacement de libre
+Cette méthode permet de faire des cartes à grand échelles en utilisant des noises c'est à dire des irrégularités naturelles et contrôlables
 
 Point positifs de cette méthode :
-* La  méthode est relativement simple à coder
-* Les paramètres de placement restent très contrôlables
+* La  méthode est plus simple à coder que le Cellular Automata
+* Les paramètres de la carte sont très contrôlables
+* La carte est lisse
 
 Point négatifs de cette méthode :
-* Si les paramètres sont mal gérés, les espaces peuvent vite se recouper ou sortir de la carte
-* Cette méthode peut ne pas donner le nombre maximal ou idéal d'espaces souhaités
+* Il faut importer une bibliothèque pour ça
+* La méthode étant très précise, elle peut demander du temps pour être bien maîtrisée
