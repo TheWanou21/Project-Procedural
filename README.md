@@ -28,3 +28,21 @@ La `Cell` peut :
 * Recevoir un objet grâce à `AddObject`
 * Détruire leur objet grâce à `ClearGridObject`
 * Donner sa position dans le monde grâce à `GetCenterPosition`
+
+Grid
+---
+La `Grid` est la grille contenant toutes les `Cells` .
+
+La `Grid` permet :
+* D'accéder au différentes `Cell` à partir de coordonnées ou de position dans le monde
+* D'interagir avec plusieurs `Cell` rapidement pour placer des `Tiles` ou autre
+* De servir de "pont" entre les méthodes et l'interaction sur les `Cells`
+
+ProceduralGenerationMethod
+---
+Cette méthode est un "modèle" qui sert de base à toutes les méhodes de générations.
+
+La `ProceduralGenerationMethod` permet :
+* D'avoir un accès à la `Grid`
+* D'utiliser une méthode `Async` c'est à dire dont on contrôle le temps
+* Plusieurs fonctions permettant de faciliter certaines méthodes de constructions
