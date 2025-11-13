@@ -104,7 +104,7 @@ La base nouvelle méthode se présente comme ça :
 ```csharp
 //Entrez vos imports
 
-namespace. Components.ProceduralGeneration.nom_de_la_methode
+namespace Components.ProceduralGeneration.nom_de_la_methode
 {
   [CreateAssetMenu(menuName = "Procedural Generation Method/nom_de_la_methode" )]
   public class nom_de_la_methode : ProceduralGenerationMethod
