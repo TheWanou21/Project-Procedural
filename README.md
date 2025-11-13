@@ -46,3 +46,7 @@ La `ProceduralGenerationMethod` permet :
 * D'avoir un accès à la `Grid`
 * D'utiliser une méthode `Async` c'est à dire dont on contrôle le temps
 * Plusieurs fonctions permettant de faciliter certaines méthodes de constructions
+
+Simple Room Placement
+---
+Cette méthode permet de placer plusieurs salles au fur et à mesure
