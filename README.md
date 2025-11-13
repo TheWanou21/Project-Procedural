@@ -49,4 +49,49 @@ La `ProceduralGenerationMethod` permet :
 
 Simple Room Placement
 ---
-Cette méthode permet de placer plusieurs salles au fur et à mesure
+Cette méthode permet de placer plusieurs salles au fur et à mesure en testant des placements aléatoires plusieurs fois jusqu'à ce qu'il trouve un emplacement de libre
+
+Point positifs de cette méthode :
+* La  méthode est relativement simple à coder
+* Les paramètres de placement restent très contrôlables
+
+Point négatifs de cette méthode :
+* Si les paramètres sont mal gérés, les espaces peuvent vite se recouper ou sortir de la carte
+* Cette méthode peut ne pas donner le nombre maximal ou idéal d'espaces souhaités
+
+BSP
+---
+Cette méthode permet de placer plusieurs salles en coupant de manière semi-aléatoires un espace plusieurs fois
+
+Point positifs de cette méthode :
+* Les paramètres de placement restent très contrôlables
+* Cette méthode permet d'avoir le nombre d'espaces souhaités
+* Cette méthode permet de facilement avoir les salles voisines entre elles
+
+Point négatifs de cette méthode :
+* Cette méthode est un peu plus compliquée que la précédente
+* Cette méthode peut occasionnellement donné un côté trop " organisé " des espaces
+
+Cellular Automata
+---
+Cette méthode permet de placer plusieurs salles au fur et à mesure en testant des placements aléatoires plusieurs fois jusqu'à ce qu'il trouve un emplacement de libre
+
+Point positifs de cette méthode :
+* La  méthode est relativement simple à coder
+* Les paramètres de placement restent très contrôlables
+
+Point négatifs de cette méthode :
+* Si les paramètres sont mal gérés, les espaces peuvent vite se recouper ou sortir de la carte
+* Cette méthode peut ne pas donner le nombre maximal ou idéal d'espaces souhaités
+
+Noise
+---
+Cette méthode permet de placer plusieurs salles au fur et à mesure en testant des placements aléatoires plusieurs fois jusqu'à ce qu'il trouve un emplacement de libre
+
+Point positifs de cette méthode :
+* La  méthode est relativement simple à coder
+* Les paramètres de placement restent très contrôlables
+
+Point négatifs de cette méthode :
+* Si les paramètres sont mal gérés, les espaces peuvent vite se recouper ou sortir de la carte
+* Cette méthode peut ne pas donner le nombre maximal ou idéal d'espaces souhaités
